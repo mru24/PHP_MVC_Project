@@ -4,4 +4,9 @@ class Blog extends Controller {
     $viewmodel = new BlogModel();
     $this->returnView($viewmodel->Index(), true);
   }
+
+  protected function addPost() {
+    $viewmodel = new BlogModel();
+    $this->returnView($viewmodel->addPost(), true);
+  }
 }

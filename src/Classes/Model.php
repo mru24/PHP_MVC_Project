@@ -13,7 +13,7 @@ abstract class Model {
 
   // Bind the prepare statement
   public function bind($param, $value, $type = null) {
-    if(iss_null($type)) {
+    if(is_null($type)) {
       switch (true) {
         case is_int($value):
           $type = PDO::PARAM_INT;
@@ -43,5 +43,9 @@ abstract class Model {
   public function single() {
     $this->execute();
     return $this->stmt->fetch(PDO::FETCH_ASSOC);
+  }
+
+  public function lastInsertId() {
+    return $this->dbh->lastInsertId();
   }
 }

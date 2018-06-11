@@ -1,5 +1,5 @@
 <?php
-class AdminModel {
+class AdminModel extends Model {
   public function Index() {
     return;
   }
